@@ -9,7 +9,7 @@
 
 ### Demo
 
-[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
+![Alt Text](/readmeContent/demo.gif)
 
 ### There are 7 different objects to use:
 - Pyramid

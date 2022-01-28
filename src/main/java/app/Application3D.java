@@ -16,7 +16,7 @@ public class Application3D extends Application {
         Controller3D controller = fxmlLoader.getController();
         controller.setUpScene(scene);
 
-        stage.setTitle("Timkin Dmitry, seminar 5");
+        stage.setTitle("3D");
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();
