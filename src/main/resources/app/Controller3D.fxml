@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane onRotate="#onRotating" onScroll="#onScrolling" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.Controller3D">
+   <children>
+      <MenuBar layoutX="1.0" prefHeight="28.0" prefWidth="600.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0">
+        <menus>
+            <Menu mnemonicParsing="false" text="Show">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#onShowPyramidClick" text="Pyramid" />
+                  <MenuItem mnemonicParsing="false" onAction="#onShowCubeClick" text="Cube" />
+                  <MenuItem mnemonicParsing="false" onAction="#onShowOctahedronClick" text="Octahedron" />
+                  <MenuItem mnemonicParsing="false" onAction="#onShowIcosahedronClick" text="Icosahedron" />
+                  <MenuItem mnemonicParsing="false" onAction="#onShowDodecahedronClick" text="Dodecahedron" />
+                  <MenuItem mnemonicParsing="false" onAction="#onShowSphereWithPolesClick" text="Sphere with poles" />
+                  <MenuItem mnemonicParsing="false" onAction="#onShowSphereWithoutPolesClick" text="Sphere without poles" />
+               </items></Menu>
+            <Menu mnemonicParsing="false" text="Mirror">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#onMirrorOXClick" text="oX" />
+                  <MenuItem mnemonicParsing="false" onAction="#onMirrorOYClick" text="oY" />
+                  <MenuItem mnemonicParsing="false" onAction="#onMirrorOZClick" text="oZ" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Projection">
+               <items>
+                  <RadioMenuItem mnemonicParsing="false" onAction="#onParallelProjectionClick" selected="true" text="Parallel">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="projectionToggleGroup" />
+                     </toggleGroup>
+                  </RadioMenuItem>
+                  <RadioMenuItem mnemonicParsing="false" onAction="#onPerspectiveProjectionClick" text="Perspective" toggleGroup="$projectionToggleGroup" />
+               </items></Menu>
+            <Menu mnemonicParsing="false" text="Roberts algorithm">
+               <items>
+                  <RadioMenuItem mnemonicParsing="false" onAction="#onRobertsAlgorithmEnableClick" selected="true" text="Enable">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="RobertsAlgorithmToggleGroup" />
+                     </toggleGroup>
+                  </RadioMenuItem>
+                  <RadioMenuItem mnemonicParsing="false" onAction="#onRobertsAlgorithmDisableClick" text="Disable" toggleGroup="$RobertsAlgorithmToggleGroup" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Utils">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#onSaveNodesClick" text="Save nodes" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="About">
+              <items>
+                  <MenuItem mnemonicParsing="false" onAction="#onAboutAuthorClick" text="Program" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <Canvas fx:id="canvas" height="474.0" layoutX="114.0" layoutY="27.0" onMouseClicked="#onCanvasMouseClicked" onMouseDragged="#onCanvasMouseDrugged" onScroll="#onScrolling" onZoom="#onZooming" width="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="27.0" />
+   </children>
+</AnchorPane>
